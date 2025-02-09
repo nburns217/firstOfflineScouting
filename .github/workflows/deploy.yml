@@ -30,7 +30,7 @@ jobs:
         run: npm run build
 
       - name: Upload artifact (build folder)
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./build  # Ensure this is the correct build output directory
       
