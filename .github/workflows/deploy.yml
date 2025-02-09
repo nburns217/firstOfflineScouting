@@ -29,9 +29,19 @@ jobs:
       - name: Build React App
         run: npm run build
 
+      - name: Upload artifact (build folder)
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./build  # Ensure this is the correct build output directory
       
+  deploy:
+    needs: build  # Ensures deployment runs only after build job completes successfully
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          publish_dir: ./build  # Ensure this is the correct build output directory
