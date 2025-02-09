@@ -32,6 +32,7 @@ jobs:
       - name: Upload artifact (build folder)
         uses: actions/upload-artifact@v4
         with:
+          name: github-pages
           path: ./build  # Ensure this is the correct build output directory
       
   deploy:
