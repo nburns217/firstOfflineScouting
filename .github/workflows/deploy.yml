@@ -29,8 +29,9 @@ jobs:
       - name: Build React App
         run: npm run build
 
+      
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+        id: deployment
+        uses: actions/deploy-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build  # Ensure this is the correct build output directory
