@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "id": "team2342-scouting-app",
+  "short_name": "Scouting App",
+  "name": "Team 2342 Scouting App",
   "icons": [
     {
       "src": "favicon.ico",
